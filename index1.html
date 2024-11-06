@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Notas - Turma 2, 10ª Classe</title>
+    <!-- Conexão do CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulário de Notas</h1>
+    <form id="form-notas">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="numero">Número de Aluno:</label>
+        <input type="number" id="numero" name="numero" required>
+
+        <label for="lingua">Nota em Língua Portuguesa:</label>
+        <input type="number" id="lingua" name="lingua" step="0.1" required>
+
+        <label for="matematica">Nota em Matemática:</label>
+        <input type="number" id="matematica" name="matematica" step="0.1" required>
+
+        <label for="ingles">Nota em Inglês:</label>
+        <input type="number" id="ingles" name="ingles" step="0.1" required>
+
+        <label for="tic">Nota em TIC:</label>
+        <input type="number" id="tic" name="tic" step="0.1" required>
+
+        <label for="tlp">Nota em TLP:</label>
+        <input type="number" id="tlp" name="tlp" step="0.1" required>
+
+        <label for="electrotecnia">Nota em Eletrotecnia:</label>
+        <input type="number" id="electrotecnia" name="electrotecnia" step="0.1" required>
+
+        <label for="fisica">Nota em Física:</label>
+        <input type="number" id="fisica" name="fisica" step="0.1" required>
+
+        <label for="quimica">Nota em Química:</label>
+        <input type="number" id="quimica" name="quimica" step="0.1" required>
+
+        <label for="empreendedorismo">Nota em Empreendedorismo:</label>
+        <input type="number" id="empreendedorismo" name="empreendedorismo" step="0.1" required>
+
+        <label for="educacao_fisica">Nota em Educação Física:</label>
+        <input type="number" id="educacao_fisica" name="educacao_fisica" step="0.1" required>
+
+        <label for="fai">Nota em FAI:</label>
+        <input type="number" id="fai" name="fai" step="0.1" required>
+
+        <label for="seac">Nota em SEAC:</label>
+        <input type="number" id="seac" name="seac" step="0.1" required>
+
+        <button type="button" onclick="calcularMedia()">Calcular Média</button>
+    </form>
+    
+    <div id="resultado" class="resultado"></div>
+
+    <!-- Conexão do JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
