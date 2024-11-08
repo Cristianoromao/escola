@@ -2,19 +2,25 @@
 function calcularMedia() {
     const nome = document.getElementById("nome").value;
     const numero = document.getElementById("numero").value;
+    
+    // Obter as notas das disciplinas
     const disciplinas = [
-        "linguaPortuguesa", "matematica", "ingles", "tic", "tlp", "eletrotecnia",
-        "fisica", "quimica", "empreendedorismo", "educacaoFisica", "fai", "seac"
+        "lingua", "matematica", "ingles", "tic", "tlp", "eletrotecnia",
+        "fisica", "quimica", "educacaoFisica", "seac"
     ];
 
-    // Obter as notas e calcular a média
     let soma = 0;
     let totalDisciplinas = disciplinas.length;
 
-    disciplinas.forEach(disciplina => {
-        const nota = parseFloat(document.getElementById(disciplina).value);
+    // Verificar se todas as notas foram preenchidas corretamente
+    for (let i = 0; i < disciplinas.length; i++) {
+        const nota = parseFloat(document.getElementById(disciplinas[i]).value);
+        if (isNaN(nota)) {
+            alert(`Por favor, insira uma nota válida para ${disciplinas[i]}.`);
+            return; // Impede o cálculo da média se alguma nota estiver faltando
+        }
         soma += nota;
-    });
+    }
 
     const media = soma / totalDisciplinas;
 
@@ -28,7 +34,7 @@ function calcularMedia() {
 
 // Função para salvar a média no localStorage
 function salvarMediaLocal(nome, numero, media) {
-    // Obter os dados existentes (ou criar um novo array se não houver dados)
+    // Obter os dados existentes ou criar um novo array se não houver dados
     let alunos = JSON.parse(localStorage.getItem("alunos")) || [];
 
     // Adicionar o novo aluno com a média ao array
